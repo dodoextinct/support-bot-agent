@@ -2,6 +2,7 @@ from flask import Flask
 from dotenv import load_dotenv
 import logging
 import os
+from flask_cors import CORS, cross_origin
 
 # Load env vars
 load_dotenv()
@@ -12,6 +13,8 @@ logging.getLogger("pymongo").setLevel(logging.WARNING)
 
 # Init Flask app
 app = Flask(__name__)
+cors = CORS(app) # allow CORS for all domains on all routes.
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Register agent route
 from routes.support import support_bp

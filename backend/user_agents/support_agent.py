@@ -33,8 +33,13 @@ def get_support_agent(session_id="support-session"):
         name=collection_name,
         session_id=session_id,
         model=OpenAIChat(id="gpt-4o", max_retries=1),
-        # memory=memory,
-        # storage=storage,
+        memory=memory,
+        storage=storage,
+        enable_agentic_memory=True,
+        enable_user_memories=True,
+        read_chat_history=True,
+        add_history_to_messages=True,
+        num_history_runs=3,
         tools=[],
         show_tool_calls=False,
         markdown=True,
@@ -54,8 +59,10 @@ def get_support_agent(session_id="support-session"):
         ),
         instructions=[
             "If the answer is not in the knowledge base, respond with: 'I don't know.'",
+            "Always answer only 'I don't know' if answer is not present in knowledge base, never make answers on own",
             "Do not hallucinate or assume answers.",
             "Do not include disclaimers.",
             "Respond clearly and concisely using markdown.",
+            "Format your answers beautifully using markdown."
         ],
     )

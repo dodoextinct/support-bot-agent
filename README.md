@@ -5,6 +5,7 @@
 A full-stack AI-powered chatbot that answers user queries based on your custom knowledge base. This application combines OpenAI's language model with vector search capabilities for markdown, PDF, and various document file types.
 
 -----
+![image](https://github.com/user-attachments/assets/8bcabd69-7973-4101-9944-e5d95efe2ede)
 
 ## Features
 

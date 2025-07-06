@@ -1,6 +1,10 @@
 - My Approach: From Start to Finish
-- Problem Statement:
-I wanted to build a chatbot interface that could respond to user queries using AI and also retrieve answers from a custom knowledge base (markdown, PDFs, or docs).
+Problem Statement:
+To build a chatbot interface that could respond to user queries using AI and also retrieve answers from a custom knowledge base (markdown, PDFs, or docs).
+
+Knowledge Base:
+- The knowledge base was created by scraping the Angel One support link; the script is attached for clarity under backend/utils/scraper.py.
+- The knowledge base is uploaded to MongoDB during the first run of the app.
 
 Backend Stack:
 - I used Flask to create a lightweight HTTP server.

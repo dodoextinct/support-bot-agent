@@ -1,0 +1,34 @@
+- My Approach: From Start to Finish
+- Problem Statement:
+I wanted to build a chatbot interface that could respond to user queries using AI and also retrieve answers from a custom knowledge base (markdown, PDFs, or docs).
+
+Backend Stack:
+- I used Flask to create a lightweight HTTP server.
+- The AI logic and knowledge retrieval were handled using Agno SDK, where:
+  - I created a support_agent using tools like search_knowledge_base.
+  - I ingested docs, markdowns, and PDFs into a MongoDB vector store.
+
+- I wrote a workflow SupportWorkflow that invoked the agent and returned AI-powered responses.
+
+Frontend Stack:
+- I used Next.js with Tailwind CSS for the UI.
+- The chat interface was custom-designed using Tailwind, and I used:
+  - Textarea with Enter to submit.
+  - Markdown rendering via the marked library.
+  - Loading spinners and chat bubbles for user/AI messages.
+
+Connecting Frontend to Backend:
+- Frontend sent a POST request to /support endpoint with the user’s message.
+- Backend responded with the AI-generated reply (including markdown content).
+
+Dockerization:
+- I wrote two separate Dockerfiles (one in frontend/, one in backend/).
+- Used docker-compose.yml to spin up both containers:
+- frontend runs on port 3000
+- backend runs on port 8000
+
+Future Scope:
+- Support for other models should be added.
+- Functionality to stop chats if needed.
+- Upload documents dynamically from frontend
+- Authentication and chat history

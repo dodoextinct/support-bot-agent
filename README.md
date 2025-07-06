@@ -81,7 +81,8 @@ cd support-bot-agent
 Rename the provided `.env` template file:
 
 ```bash
-cp backend/ee.env.example backend/.env
+cp env.local.frontend.example frontend/.env.local
+cp env.backend.example backend/.env
 ```
 
 Now, open `backend/.env` and add your secrets:

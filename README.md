@@ -138,11 +138,4 @@ npx run dev
 
 -----
 
-## 💡 To-Do / Ideas
-
-  * Add support for file uploads via the frontend.
-  * Stream AI response rendering for a more dynamic user experience.
-
------
-
 Build by Yash Krishan
